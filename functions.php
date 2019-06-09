@@ -53,3 +53,31 @@ function twentyninteteen_beaver__header_footer_render() {
 		}
 	}
 }
+
+// Allow Beaver Builder Template Part support
+add_filter( 'fl_theme_builder_part_hooks', 'twentynineteen_beaver_register_parts' );
+function twentynineteen_beaver_register_parts() {
+	return array(
+		array(
+			'label' => 'Header',
+			'hooks' => array(
+				'twentynineteen_child_before_header' => 'Before Header',
+				'twentynineteen_child_after_header'  => 'After Header',
+			),
+		),
+		array(
+			'label' => 'Content',
+			'hooks' => array(
+				'twentynineteen_child_before_content' => 'Before Content',
+				'twentynineteen_child_after_content'  => 'After Content',
+			),
+		),
+		array(
+			'label' => 'Footer',
+			'hooks' => array(
+				'twentynineteen_child_before_footer' => 'Before Footer',
+				'twentynineteen_child_after_footer'  => 'After Footer',
+			),
+		),
+	);
+}
