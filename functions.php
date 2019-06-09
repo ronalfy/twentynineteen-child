@@ -11,3 +11,8 @@ function twentynineteen_child_enqueue_scripts() {
 		'all'
 	);
 }
+
+add_action( 'twentynineteen_child_header', 'twentynineteen_child_header' );
+function twentynineteen_child_header() {
+	include 'includes/header.php';
+}
